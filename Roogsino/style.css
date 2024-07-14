@@ -1,0 +1,394 @@
+@font-face {
+    font-family: 'righteous';
+    src: url("public/font/Righteous-Regular.ttf") format('truetype'),
+}
+
+@font-face {
+    font-family: 'oswald';
+    src: url("public/font/Oswald-Regular.ttf") format('truetype'),
+}
+
+@font-face {
+    font-family: 'poppins';
+    src: url("public/font/Poppins-Regular.ttf") format('truetype'),
+}
+
+body {
+    font-family: Arial, sans-serif righteous, oswald, poppins;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 40px 100px;
+    background: var(--Grey-Dark, #110501);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+@media only screen and (max-width: 600px) {
+    .container {
+        padding: 0px;
+    }
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+
+@media only screen and (max-width: 700px) {
+    header {
+        display: block;
+        justify-content: center;
+        padding: 15px;
+    }
+}
+
+.subHeader {
+    display: flex; 
+    align-items: center;
+    justify-content: space-between;
+}
+
+@media only screen and (max-width: 700px) {
+    subHeader {
+        padding: 15px;
+        flex-direction: row-reverse;
+
+    }
+}
+
+.logo img {
+    width: 220px;
+}
+
+.balance {
+    display: flex;
+    align-items: center;
+    background-color: #FF8400;
+    border-radius: 4px;
+    padding: 6px 10px;
+    width: 200px;
+    font-family: oswald;
+    color: #161B2A;
+}
+
+.balance span {
+    font-size: 1.0em;
+    margin: 0 14px;
+    margin-top: 1px;
+    font-weight: 600;
+}
+
+.balance img {
+    width: 25px;
+}
+
+.deposit-btn {
+    background-color: #161B2A;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 3px;
+    font-weight: 800;
+}
+
+.profile img {
+    width: 53px;
+    border-radius: 50%;
+    margin-left: 30px;
+    margin-top: 5px;
+}
+
+
+.banner {
+    background-image: url("public/images/banner.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 400px;
+}
+
+@media only screen and (max-width: 1100px) {
+    .banner {
+        background-size: cover;
+        height: 300px;
+        border-radius: 20px;
+        margin: 0 10px;
+    }
+}
+
+.leaf {
+    position: absolute;
+    display: flex;
+    top: -43px;
+    left: 43%;
+    z-index: 0;
+}
+
+.leaf img {
+    width: 55px;
+}
+
+.games {
+    text-align: center;
+    margin-bottom: 40px;
+    font-family: oswald;
+}
+
+.game-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    justify-content: center;
+}
+
+@media only screen and (max-width: 600px) {
+    .game-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        justify-content: center;
+        padding: 0 20px;
+    }
+}
+
+.game {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    text-align: center;
+    box-sizing: border-box;
+    font-family: oswald;
+    margin-bottom: 20px;
+}
+
+.game img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.game p {
+    margin: 0;
+}
+
+footer {
+    display: flex;
+    align-items: center;
+    font-family: oswald;
+    text-align: center;
+}
+
+@media only screen and (max-width: 900px) {
+    footer {
+        margin: 0px;
+        padding: 0 100px;
+        padding-bottom: 30px;
+
+    }
+}
+
+footer a {
+    color: #28a745;
+    text-decoration: none;
+    font-size: 1.25em;
+}
+
+.footer-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 55px;
+    padding: 0 10px;
+    z-index: 3;
+    
+}
+
+@media only screen and (max-width: 1300px) {
+    .footer-container {
+        flex-direction: column;
+        justify-content: center;
+        background-size: cover;
+    }
+}
+
+.footer-left {
+    display: flex;
+    align-items: start;
+    font-size: 30px;
+    color: #FFC701;
+}
+
+.footer-center {
+    display: flex;
+}
+
+.footer-center img {
+    width: 140px;
+}
+
+.footer-right {
+    font-family: Roboto;
+    font-size: 22px;
+}
+
+@media only screen and (max-width: 600px) {
+    .footer-right {
+        margin-bottom: 20px;
+        font-size: 14px;
+    }
+}
+
+/* Modal styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    font-family: 'oswald';
+}
+
+.modal-tab {
+    position: absolute;
+    padding: 10px 50px;
+    top: -50px;
+    right: 0px;
+    text-align: center;
+    background-color: #FF8400;
+    font-family: oswald;
+    font-size: 25px;
+    color: black;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border: none;
+    display: flex;
+    align-items: center;
+    z-index: 2;
+}
+
+@media only screen and (max-width: 600px) {
+    .modal-tab {
+        padding: 8px 20px;
+        border-top-left-radius: 6px;
+        border-top-right-radius: 6px;
+        font-size: 17px;
+        top: -37px;
+    }
+}
+
+.modal-content {
+    margin: 15% auto;
+    padding: 20px;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    color: white;
+    position: relative;
+    z-index: 1;
+}
+
+@media only screen and (max-width: 1100px) {
+    .modal-content {
+        margin-top: 200px;
+    }
+}
+
+.close {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #aaa;
+    float: right;
+    font-size: 38px;
+    background-color: white;
+    border-radius: 6px;
+    border: gray 1px solid;
+    width: 30px;
+    height: 30px;
+}
+
+.close:hover,
+.close:focus {
+    color: rgb(107, 87, 87);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal h2 {
+    margin-top: 0;
+}
+
+.modal label {
+    display: block;
+}
+
+.modal select {
+    width: 100%;
+    padding: 10px 10px;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.modal input[type="text"] {
+    width: calc(100% - 20px);
+    border: none;
+}
+
+.modal .max-btn {
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    color: #1D4ED8;
+    border: none;
+    background-color: white;
+    margin-right: 5px;
+
+}
+
+.modal p {
+    margin-top: 0;
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 25px;
+}
+
+.modal-buttons .cancel-btn,
+.modal-buttons .confirm-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: oswald;
+    font-size: 14px;
+}
+
+.modal-buttons .cancel-btn {
+    background-color: white;
+    color: #303648;
+}
+
+.modal-buttons .confirm-btn {
+    background-color: #88ED1B;
+    color: black;
+}

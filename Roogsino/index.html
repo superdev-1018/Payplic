@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ROOGSINO</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="logo" style="display: flex; justify-content: center">
+          <img src="public/images/logo.png" alt="ROOGSINO" />
+        </div>
+        <div class="subHeader">
+          <div class="position: relative">
+            <div class="balance">
+              <span>JACK DINO</span>
+              <div class="deposit-btn" id="openModalBtn">6.60 ETH</div>
+              <button
+                style="
+                  background: none;
+                  border: none;
+                  width: 30px;
+                  text-align: center;
+                "
+                id="arrowBtn"
+                onclick="showMenu()"
+              >
+                <img
+                  src="public/images/arrowDown.png"
+                  alt=""
+                  style="width: 13px; margin-left: 7px"
+                />
+              </button>
+            </div>
+            <div
+              id="menu"
+              style="
+                position: absolute;
+                display: none;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                border-radius: 20px;
+                width: 220px;
+                background: linear-gradient(180deg, #140805 0%, #633275 100%);
+              "
+              onmouseleave="this.style.display = 'none';"
+            >
+              <button
+                style="
+                  display: flex;
+                  justify-content: space-between;
+                  padding: 8px 14px;
+                  background: rgba(255, 229, 172, 0.09);
+                  align-items: center;
+                  gap: 5px;
+                  width: 100%;
+                  border: none;
+                "
+                onclick="showModal()"
+              >
+                <p
+                  style="
+                    color: #fff;
+                    text-align: center;
+                    font-family: Oswald;
+                    font-size: 16px;
+                    font-style: normal;
+                    font-weight: 600;
+                  "
+                >
+                  MANAGE BALANCE
+                </p>
+                <img src="public/images/arrowRight.png" />
+              </button>
+              <button
+                style="
+                  display: flex;
+                  justify-content: center;
+                  padding: 2px 14px;
+                  background: none;
+                  align-items: center;
+                  gap: 5px;
+                  width: 100%;
+                  border: none;
+                "
+              >
+                <p
+                  style="
+                    color: #b2b2b2;
+                    text-align: center;
+                    font-family: Oswald;
+                    font-size: 16px;
+                    font-style: normal;
+                    font-weight: 600;
+                  "
+                >
+                  DISCOUNNECT
+                </p>
+              </button>
+            </div>
+          </div>
+          <div class="profile">
+            <img src="public/images/avatar.png" alt="Profile Picture" />
+          </div>
+        </div>
+      </header>
+      <section class="banner"></section>
+      <section class="games">
+        <div
+          style="
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            align-items: center;
+          "
+        >
+          <div
+            style="
+              background: linear-gradient(
+                270deg,
+                #434b71 0%,
+                rgba(39, 47, 72, 0) 98.2%
+              );
+              width: 25%;
+              height: 2px;
+              z-index: 5;
+            "
+          ></div>
+          <p
+            style="
+              font-size: 35px;
+              color: #ffc701;
+              font-style: normal;
+              font-weight: 600;
+              line-height: 60px;
+              letter-spacing: 1px;
+              text-transform: uppercase;
+            "
+          >
+            PLAY BIG WIN BIG
+          </p>
+          <div
+            style="
+              background: linear-gradient(
+                90deg,
+                #434b71 0%,
+                rgba(39, 47, 72, 0) 98.2%
+              );
+              width: 30%;
+              height: 2px;
+            "
+          ></div>
+        </div>
+        <div class="game-grid">
+          <div class="game">
+            <img src="public/images/aviator.png" alt="Aviator" />
+          </div>
+          <div class="game">
+            <img src="public/images/mines.png" alt="Mines" />
+          </div>
+          <div class="game">
+            <img src="public/images/goal.png" alt="Goal" />
+          </div>
+          <div class="game">
+            <img src="public/images/dice.png" alt="Dice" />
+          </div>
+          <div class="game">
+            <img src="public/images/plinko.png" alt="Plinko" />
+          </div>
+          <div class="game">
+            <img src="public/images/keno.png" alt="Keno" />
+          </div>
+          <div class="game">
+            <img src="public/images/hilo.png" alt="Hilo" />
+          </div>
+          <div class="game">
+            <img src="public/images/hotline.png" alt="Hotline" />
+          </div>
+          <div class="game">
+            <img src="public/images/roulette.png" alt="Roulette" />
+          </div>
+        </div>
+      </section>
+      <footer>
+        <div class="footer-container">
+          <div class="footer-left">
+            <p>JOIN OUR COMMUNITY</p>
+          </div>
+          <div class="footer-center">
+            <a href="">
+              <img src="public/images/discord.png" alt="Discord" />
+            </a>
+            <a href="">
+              <img src="public/images/fg.png" alt="Twitter" />
+            </a>
+            <a href="">
+              <img src="public/images/twitter.png" alt="Twitter" />
+            </a>
+          </div>
+          <p class="footer-right">© 2024 oraicasino. All rights reserved.</p>
+        </div>
+      </footer>
+    </div>
+
+    <!-- Modal -->
+    <div id="modal" class="modal">
+      <div style="position: relative">
+        <div class="modal-content">
+          <div
+            style="
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              margin-bottom: 26px;
+            "
+          >
+            <p
+              style="
+                font-size: 24px;
+                font-weight: 600;
+                text-transform: uppercase;
+                margin: 0;
+              "
+            >
+              MANAGE BALANCE
+            </p>
+            <button
+              style="
+                border-radius: 20.5px;
+                border: 1px solid #454545;
+                background: none;
+                color: #7b7272;
+                font-size: 23px;
+                padding: 4px 12px;
+                text-align: center;
+                font-weight: 600;
+              "
+              onclick="closeModal()"
+            >
+              BACK
+            </button>
+          </div>
+          <div
+            style="
+              background: linear-gradient(
+                91deg,
+                #8b47a5 8.29%,
+                #502859 109.96%
+              );
+              border-radius: 10px;
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              padding: 30px 40px;
+              margin-bottom: 10px;
+            "
+          >
+            <div
+              style="
+                color: white;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+              "
+            >
+              <p style="font-size: 12px">Available Balance</p>
+              <p style="font-size: 26px; margin: 0">6.60464 BTC</p>
+            </div>
+            <button
+              style="
+                border-radius: 3px;
+                border: none;
+                background-color: #ffc701;
+                color: #161b2a;
+                font-weight: 600;
+                font-size: 17px;
+                padding: 14px 28px;
+                font-weight: 600;
+              "
+            >
+              WITHDRAW
+            </button>
+          </div>
+          <div
+            style="
+              background: rgba(17, 12, 11, 0.95);
+              box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.08);
+              padding: 50px 35px;
+              border-radius: 10px;
+            "
+          >
+            <div>
+              <label
+                for="address"
+                style="font-weight: 400; font-size: 14px; font-family: poppins"
+                >Enter Address</label
+              >
+              <div
+                style="
+                  display: flex;
+                  align-items: center;
+                  margin-bottom: 35px;
+                  gap: 10px;
+                "
+              >
+                <input
+                  style="
+                    border: 1px solid #bdbdbd;
+                    border-radius: 4px;
+                    background: none;
+                    height: 65px;
+                    color: white;
+                    font-size: 20px;
+                    padding-left: 10px;
+                  "
+                  type="text"
+                  id="address"
+                  name="address"
+                  placeholder=""
+                />
+                <button
+                  style="
+                    display: flex;
+                    justify-content: space-between;
+                    background: none;
+                    border: none;
+                  "
+                >
+                  <img src="public/images/qr.png" alt="" />
+                </button>
+              </div>
+            </div>
+            <div>
+              <label for="amount" style="margin-top: 20px; font-family: poppins"
+                >Amount</label
+              >
+              <input
+                style="
+                  border: 1px solid #bdbdbd;
+                  border-radius: 4px;
+                  background: none;
+                  height: 65px;
+                  color: white;
+                  font-size: 20px;
+                  padding-left: 10px;
+                  width: calc(100% - 12px);
+                "
+                type="number"
+                id="amount"
+                name="amount"
+                placeholder=""
+              />
+            </div>
+            <div style="display: flex; justify-content: center">
+              <button
+                style="
+                  background-color: #ffc701;
+                  padding: 7px 24px;
+                  font-size: 30px;
+                  color: #161b2a;
+                  border-radius: 3px;
+                  font-weight: 600;
+                  border: none;
+                  margin-top: 40px;
+                "
+              >
+                DIPOSIT
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+      function closeModal() {
+        document.getElementById("modal").style.display = "none";
+      }
+
+      function showMenu() {
+        document.getElementById("menu").style.display = "block";
+      }
+
+      function showModal() {
+        document.getElementById("modal").style.display = "block";
+      }
+    </script>
+  </body>
+</html>
+
+<link rel="stylesheet" href="style.css" />

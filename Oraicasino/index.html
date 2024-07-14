@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Oraicasino.io</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="logo">
+          <img src="public/images/logo.png" alt="Oraicasino.io" />
+        </div>
+        <div style="display: flex; align-items: center">
+          <div class="balance">
+            <img src="public/images/ethereum.png" alt="Profile Picture" />
+            <span>0.345</span>
+            <button class="deposit-btn" id="openModalBtn">Deposit</button>
+          </div>
+          <div class="profile">
+            <img src="public/images/avatar.png" alt="Profile Picture" />
+          </div>
+        </div>
+      </header>
+      <section class="banner">
+        <img id="banner1" src="public/images/banner.png" alt="Banner" />
+        <img id="banner2" src="public/images/banner2.png" alt="Banner" />
+      </section>
+      <section class="games">
+        <h2>Play Games</h2>
+        <div class="game-grid">
+          <div class="game">
+            <img src="public/images/aviator.png" alt="Aviator" />
+          </div>
+          <div class="game">
+            <img src="public/images/mines.png" alt="Mines" />
+          </div>
+          <div class="game">
+            <img src="public/images/goal.png" alt="Goal" />
+          </div>
+          <div class="game">
+            <img src="public/images/dice.png" alt="Dice" />
+          </div>
+          <div class="game">
+            <img src="public/images/plinko.png" alt="Plinko" />
+          </div>
+          <div class="game">
+            <img src="public/images/keno.png" alt="Keno" />
+          </div>
+          <div class="game">
+            <img src="public/images/hilo.png" alt="Hilo" />
+          </div>
+          <div class="game">
+            <img src="public/images/hotline.png" alt="Hotline" />
+          </div>
+          <div class="game">
+            <img src="public/images/roulette.png" alt="Roulette" />
+          </div>
+          <div class="game">
+            <img
+              src="public/images/ball.png"
+              style="width: 140px; margin-top: 50px"
+              alt="Ball"
+            />
+          </div>
+        </div>
+      </section>
+      <footer>
+        <div class="footer-container">
+          <div class="footer-left">
+            <p>
+              JOIN OUR <br />
+              COMMUNITY
+            </p>
+            <a id="logo1" href="">
+              <img
+                src="public/images/logo.png"
+                alt=""
+                style="width: 180px; margin-top: 10px"
+              />
+            </a>
+          </div>
+          <div class="footer-right">
+            <a href="">
+              <img src="public/images/discord.png" alt="Discord" />
+            </a>
+            <a href="">
+              <img src="public/images/twitter.png" alt="Twitter" />
+            </a>
+          </div>
+        </div>
+        <a id="logo2" href="">
+          <img
+            src="public/images/logo.png"
+            alt=""
+            style="width: 120px; margin-top: 10px"
+          />
+        </a>
+        <p class="footer-bottom">© 2024 oraicasino. All rights reserved.</p>
+      </footer>
+    </div>
+
+    <!-- Modal -->
+    <div id="depositModal" class="modal">
+      <div style="position: relative">
+        <!-- <div class="modal-leaf">
+                <img src="public/images/leaf3.png" alt="Leaf">
+            </div> -->
+        <div class="modal-content">
+          <button
+            class="modal-tab"
+            id="withdraw"
+            onclick="hideWithdrawButton()"
+          >
+            Withdraw
+          </button>
+          <button
+            class="modal-tab"
+            id="deposit"
+            style="display: none"
+            onclick="hideDepositButton()"
+          >
+            Deposit
+          </button>
+          <span class="close" id="closeModalBtn">&times;</span>
+          <p id="withdrawText" style="display: none; font-size: 24px; font-weight: 400; line-height: 24px">
+            Withdraw
+          </p>
+          <p id="depositText" style="font-size: 24px; font-weight: 400; line-height: 24px">
+            Deposit
+          </p>
+          <label for="asset" style="padding-top: 20px">Asset</label>
+          <select id="asset" name="asset">
+            <option value="BTC"><img src="public/images/btc.png" /> BTC</option>
+            <option value="ETH">ETH</option>
+          </select>
+          <div id="withdrawAmount" style="display: none">
+            <label for="amount" style="margin-top: 20px">Amount</label>
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                border-radius: 6px;
+                background-color: white;
+              "
+            >
+              <input
+                style="border: none"
+                type="text"
+                id="amount"
+                name="amount"
+                placeholder="0.00 BTC"
+              />
+              <button class="max-btn">MAX</button>
+            </div>
+            <div
+              style="
+                display: flex;
+                justify-content: space-between;
+                margin-top: 20px;
+              "
+            >
+              <p>Available</p>
+              <p>0.00 USDT</p>
+            </div>
+          </div>
+
+          <div class="modal-buttons">
+            <div></div>
+            <div id="confirmDeposit" style="display: flex; gap: 10px">
+              <button class="cancel-btn">Cancel</button>
+            </div>
+            <div id="confirmWithdraw" style="display: none; gap: 10px">
+              <button class="cancel-btn">Cancel</button>
+              <button class="confirm-btn">Withdraw</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+      function hideWithdrawButton() {
+        document.getElementById("withdraw").style.display = "none";
+        document.getElementById("deposit").style.display = "block";
+        document.getElementById("confirmWithdraw").style.display = "block";
+        document.getElementById("confirmDeposit").style.display = "none";
+        document.getElementById("withdrawAmount").style.display = "block";
+        document.getElementById("withdrawText").style.display = "block";
+        document.getElementById("depositText").style.display = "none";
+
+      }
+
+      function hideDepositButton() {
+        document.getElementById("withdraw").style.display = "block";
+        document.getElementById("deposit").style.display = "none";
+        document.getElementById("confirmWithdraw").style.display = "none";
+        document.getElementById("confirmDeposit").style.display = "block";
+        document.getElementById("withdrawAmount").style.display = "none";
+        document.getElementById("withdrawText").style.display = "none";
+        document.getElementById("depositText").style.display = "block";
+      }
+    </script>
+  </body>
+</html>
+
+<link rel="stylesheet" href="style.css" />
